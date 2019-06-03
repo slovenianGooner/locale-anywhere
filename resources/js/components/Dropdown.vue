@@ -41,10 +41,6 @@
 </template>
 <script>
 export default {
-	props: {
-		currentLocale: { type: String, default: "en" }
-	},
-
 	data: () => ({
 		locales: []
 	}),
@@ -70,11 +66,14 @@ export default {
 	},
 
 	computed: {
+		currentLocale() {
+			return window.config.locale ? window.config.locale : "en";
+		},
 		currentLocaleName() {
 			let name = null;
 
 			Object.keys(this.locales).forEach(locale => {
-				if (locale === this.currentLocale) {
+				if (locale === window.config.locale) {
 					name = this.locales[locale];
 				}
 			});

@@ -8,8 +8,11 @@ Nova.booting((Vue, router, store) => {
     ]);
 
     Vue.component('locale-anywhere-dropdown', require('./components/Dropdown'));
-    Vue.component('custom-detail-toolbar', require('./components/CustomDetailToolbar'));
     Vue.component('index-locale-anywhere', require('./components/IndexField'));
     Vue.component('detail-locale-anywhere', require('./components/DetailField'));
     Vue.component('form-locale-anywhere', require('./components/FormField'));
+
+    if (window.config.customDetailToolbar) {
+        Vue.component('custom-detail-toolbar', require('./components/CustomDetailToolbar'));
+    }
 });

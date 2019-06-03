@@ -9,12 +9,22 @@ class LocaleAnywhere extends Tool
 {
     protected static $locales = [];
     public static $useFallback = null;
+    public static $customDetailToolbar = false;
 
-    public function __construct($locales, $useFallback = null)
+    public function __construct(array $data = [])
     {
-        self::$locales = $locales;
+        extract($data);
+
+        if (isset($locales)) {
+            self::$locales = $locales;
+        }
+
         if (isset($useFallback)) {
             self::$useFallback = $useFallback;
+        }
+
+        if (isset($customDetailToolbar)) {
+            self::$customDetailToolbar = $customDetailToolbar;
         }
     }
 
@@ -30,6 +40,7 @@ class LocaleAnywhere extends Tool
      */
     public function boot()
     {
+        Nova::provideToScript(["customDetailToolbar" => self::$customDetailToolbar, "locale" => cache()->has("locale") ? cache()->get("locale") : app()->getLocale()]);
         Nova::script('locale-anywhere', __DIR__.'/../dist/js/tool.js');
         Nova::style('locale-anywhere', __DIR__.'/../dist/css/tool.css');
     }

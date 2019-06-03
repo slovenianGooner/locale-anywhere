@@ -39,6 +39,9 @@ use Sloveniangooner\LocaleAnywhere\Language;
 Language::make("Language)
 ```
 
+![](screens/formField.png)
+![](screens/detailField.png)
+
 ### Extend trait
 
 You also have to overwrite Spatie's `HasTranslations` trait in your model to allow toggling fallback locale and apply custom locale instead of `app()->getLocale()`.
@@ -69,6 +72,8 @@ The package provides a switch for the languages that you have to insert into Nov
 <locale-anywhere-dropdown class="ml-6"></locale-anywhere-dropdown>
 ```
 
+![](screens/dropdown.png)
+
 ### Delete translation toolbar button
 
 The package provides a CustomDetailToolbar component that you can toggle via configuration. Optionally, you can also only grab the `<delete-toolbar-button>` from the package and paste it into your own custom detail toolbar.
@@ -85,3 +90,5 @@ new LocaleAnywhere(
     ]
 )
 ```
+
+![](screens/toolbar.png)
