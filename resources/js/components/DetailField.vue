@@ -7,7 +7,7 @@
 			<div class="w-1/4 py-4">
 				<h4 class="font-normal text-80">Is Translated?</h4>
 			</div>
-			<div class="w-3/4 py-4 flex">
+			<div class="w-3/4 py-4">
 				<span
 					class="inline-block rounded-full w-2 h-2 mr-1"
 					:class="{
