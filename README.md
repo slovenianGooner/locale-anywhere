@@ -39,8 +39,8 @@ use Sloveniangooner\LocaleAnywhere\Language;
 Language::make("Language)
 ```
 
-![](screens/formField.png)
-![](screens/detailField.png)
+![](/screens/formField.png)
+![](/screens/detailField.png)
 
 ### Extend trait
 
@@ -72,7 +72,7 @@ The package provides a switch for the languages that you have to insert into Nov
 <locale-anywhere-dropdown class="ml-6"></locale-anywhere-dropdown>
 ```
 
-![](screens/dropdown.png)
+![](/screens/dropdown.png)
 
 ### Delete translation toolbar button
 
@@ -91,4 +91,4 @@ new LocaleAnywhere(
 )
 ```
 
-![](screens/toolbar.png)
+![](/screens/toolbar.png)
