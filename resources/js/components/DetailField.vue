@@ -8,22 +8,14 @@
 				<h4 class="font-normal text-80">Is Translated?</h4>
 			</div>
 			<div class="w-3/4 py-4 flex">
-				<div>
-					<span
-						class="inline-block rounded-full w-2 h-2 mr-1"
-						:class="{
-							'bg-success': field.value.isTranslated,
-							'bg-danger': !field.value.isTranslated
-						}"
-					/>
-					<span>{{ label }}</span>
-				</div>
-				<a
-					v-if="field.value.isTranslated"
-					@click.prevent="openDeleteModal"
-					class="btn btn-link dim text-80 ml-auto cursor-pointer"
-					>Delete translation</a
-				>
+				<span
+					class="inline-block rounded-full w-2 h-2 mr-1"
+					:class="{
+						'bg-success': field.value.isTranslated,
+						'bg-danger': !field.value.isTranslated
+					}"
+				/>
+				<span>{{ label }}</span>
 			</div>
 		</div>
 	</div>
