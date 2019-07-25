@@ -15,7 +15,8 @@ class Language extends Field
     {
         parent::__construct($name, $attribute, $resolveCallback);
     
-        $this->locale = cache()->has("locale") ? cache()->get("locale") : app()->getLocale();
+        $prefix = optional(auth()->user())->id;
+        $this->locale = cache()->has($prefix.".locale") ? cache()->get($prefix.".locale") : app()->getLocale();
         $this->withMeta([
             "locales" => LocaleAnywhere::getLocales(),
             "locale" => $this->locale,

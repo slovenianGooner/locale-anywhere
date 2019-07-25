@@ -33,6 +33,7 @@ trait HasTranslations
 
     protected function getLocale() : string
     {
-        return cache()->has("locale") ? cache()->get("locale") : app()->getLocale();
+        $prefix = optional(auth()->user())->id;
+        return cache()->has($prefix.".locale") ? cache()->get($prefix.".locale") : app()->getLocale();
     }
 }

@@ -40,7 +40,8 @@ class LocaleAnywhere extends Tool
      */
     public function boot()
     {
-        Nova::provideToScript(["customDetailToolbar" => self::$customDetailToolbar, "locale" => cache()->has("locale") ? cache()->get("locale") : app()->getLocale()]);
+        $prefix = optional(auth()->user())->id;
+        Nova::provideToScript(["customDetailToolbar" => self::$customDetailToolbar, "locale" => cache()->has($prefix.".locale") ? cache()->get($prefix.".locale") : app()->getLocale()]);
         Nova::script('locale-anywhere', __DIR__.'/../dist/js/tool.js');
         Nova::style('locale-anywhere', __DIR__.'/../dist/css/tool.css');
     }

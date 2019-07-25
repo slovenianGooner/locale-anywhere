@@ -22,8 +22,9 @@ class LanguagesController extends Controller
 
     public function cacheLocale(Request $request)
     {
-        cache()->forever("locale", $request->input("locale"));
-        return cache()->get("locale");
+        $prefix = optional(auth()->user())->id;
+        cache()->forever($prefix.".locale", $request->input("locale"));
+        return cache()->get($prefix.".locale");
     }
 
     public function delete(Request $request)
