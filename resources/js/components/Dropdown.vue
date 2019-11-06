@@ -2,8 +2,6 @@
 	<dropdown class="ml-5 h-9 flex items-center dropdown-right">
 		<dropdown-trigger
 			class="h-9 flex items-center"
-			slot-scope="{ toggle }"
-			:handle-click="toggle"
 		>
 			<div class="mr-2">
 				<svg
