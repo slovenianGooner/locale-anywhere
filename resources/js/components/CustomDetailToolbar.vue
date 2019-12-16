@@ -1,37 +1,37 @@
 <template>
-	<div class="ml-auto">
-		<delete-toolbar-button
-			v-if="
+  <div class="ml-auto">
+    <delete-toolbar-button
+      v-if="
 				canDeleteTranslations &&
 					resource.authorizedToDelete &&
 					!resource.softDeleted
 			"
-			:resource="resource"
-			:resourceName="resourceName"
-			:resourceId="resourceId"
-		></delete-toolbar-button>
-	</div>
+      :resource="resource"
+      :resourceName="resourceName"
+      :resourceId="resourceId"
+    ></delete-toolbar-button>
+  </div>
 </template>
 <script>
 export default {
-	props: ["resourceName", "resourceId", "resource"],
+  props: ['resourceName', 'resourceId', 'resource'],
 
-	components: {
-		"delete-toolbar-button": require("./DeleteToolbarButton")
-	},
+  components: {
+    'delete-toolbar-button': require('./DeleteToolbarButton')
+  },
 
-	computed: {
-		canDeleteTranslations() {
-			let can = false;
+  computed: {
+    canDeleteTranslations() {
+      let can = false
 
-			this.resource.fields.forEach(field => {
-				if (field.locales !== undefined) {
-					can = true;
-				}
-			});
+      this.resource.fields.forEach(field => {
+        if (field.locales !== undefined) {
+          can = true
+        }
+      })
 
-			return can;
-		}
-	}
-};
+      return can
+    }
+  }
+}
 </script>
