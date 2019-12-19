@@ -1,8 +1,6 @@
 <template>
   <dropdown class="ml-5 h-9 flex items-center dropdown-right">
     <dropdown-trigger
-      slot-scope="{ toggle }"
-      :handle-click="toggle"
       class="h-9 flex items-center"
     >
       <div class="mr-2">
